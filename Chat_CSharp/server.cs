@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 
-namespace SimpleTcpSrvr
+namespace Chat_CSharp_Server
 {
-    class server
+    class Server
     {
         static void Main(string[] args)
         {
