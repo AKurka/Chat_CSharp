@@ -10,11 +10,10 @@ namespace Chat_CSharp_Server
 {
     class Server
     {
-        static void Main(string[] args)
+
+        public static Socket ServerConnection()
         {
             Console.OutputEncoding = Encoding.UTF8;
-
-            int recv;
 
             byte[] data = new byte[1024];
 
@@ -34,42 +33,43 @@ namespace Chat_CSharp_Server
 
             Console.WriteLine("Connected with {0} at port {1}", clientep.Address, clientep.Port);
 
-            string welcome = "Bienvenue sur le server de test";
+            string welcome = "Bienvenue sur le serveur de test";
 
             data = Encoding.UTF8.GetBytes(welcome);
 
             client.Send(data, data.Length, SocketFlags.None);
 
-            string input;
+            return client;
+        }
 
-            while (true)
-            {
+        public static void sendMsg(Socket client)
+        {
+            string input = Console.ReadLine();
 
-                data = new byte[1024];
+            Console.WriteLine("Vous: " + input);
 
-                recv = client.Receive(data);
+            client.Send(Encoding.UTF8.GetBytes(input));
+        }
 
-                if (recv == 0)
+        public static void receiveMsg(Socket client)
+        {
+            byte[] data = new byte[1024];
 
-                    break;
+            data = new byte[1024];
 
-                Console.WriteLine("Client: " + Encoding.UTF8.GetString(data, 0, recv));
+            int recv = client.Receive(data);
 
-                input = Console.ReadLine();
+            Console.WriteLine("Client: " + Encoding.UTF8.GetString(data, 0, recv));
+        }
+        static void Main(string[] args)
+        {
+            Socket client = ServerConnection();
+            
 
-                Console.WriteLine("Vous: " + input);
-
-                client.Send(Encoding.UTF8.GetBytes(input));
-            }
-
-            Console.WriteLine("Disconnected from {0}", clientep.Address);
-
-            client.Close();
-
-            newsock.Close();
-
-            Console.ReadLine();
 
         }
+        
+
+
     }
 }

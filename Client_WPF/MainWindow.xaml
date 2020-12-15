@@ -14,13 +14,10 @@
             <Line StrokeThickness="2" X1="500" Margin="0 10 0 0" Stroke="Black" ></Line>
             <ListBox Name="SavesList" BorderThickness="0" VerticalContentAlignment="Center" FontFamily="Montserrat" FontWeight="DemiBold" FontSize="14"></ListBox>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Margin="50 340 0 0">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Margin="50 350 0 0">
             <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16">Sauvegardes à lancer</TextBlock>
             <Line StrokeThickness="2" X1="500" Margin="0 10 0 0" Stroke="Black" ></Line>
             <ListBox Name="SavesLaunch" BorderThickness="0" VerticalContentAlignment="Center" FontFamily="Montserrat" FontWeight="DemiBold" FontSize="14">
-                <ListBoxItem>
-                    <TextBlock>Sauvegarde 1</TextBlock>
-                </ListBoxItem>
             </ListBox>
             <Button Content="Lancer"  HorizontalAlignment="Center" Height="30" Width="70" FontWeight="Bold" Foreground="White" FontSize="10" Background="#16C25D" BorderThickness="0"></Button>
         </StackPanel>
@@ -30,19 +27,19 @@
             <ProgressBar Margin="0 20 0 0" Padding="10 10 10 10" Height="30" Minimum="0" Maximum="100" Value="70" BorderBrush="Green"></ProgressBar>
             <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16" Margin="0 20 0 0">Progression : 75%</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
-                <Button Content="Stop"  HorizontalAlignment="Center" Margin="0,0,10,0"  Height="30" Width="70" RenderTransformOrigin="2.423,0.405" FontWeight="Bold" Foreground="White" FontSize="10" Background="#C21616" BorderThickness="0"></Button>
+                <Button Command="" Content="Stop"  HorizontalAlignment="Center" Margin="0,0,10,0"  Height="30" Width="70" RenderTransformOrigin="2.423,0.405" FontWeight="Bold" Foreground="White" FontSize="10" Background="#C21616" BorderThickness="0"></Button>
                 <Button Content="Pause"  HorizontalAlignment="Center" Margin="10,0,10,0"  Height="30" Width="70" RenderTransformOrigin="2.423,0.405" FontWeight="Bold" Foreground="Black" FontSize="10" Background="#fbc312" BorderThickness="0"></Button>
                 <Button Content="Reprendre"  HorizontalAlignment="Center" Margin="10,0,0,0"  Height="30" Width="70" RenderTransformOrigin="2.423,0.405" FontWeight="Bold" Foreground="White" FontSize="10" Background="#4895ef" BorderThickness="0"></Button>
             </StackPanel>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Width="500" Margin="0 340 70 0">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Width="500" Margin="0 350 70 0">
             <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16">Ajouter une sauvegarde</TextBlock>
             <Line StrokeThickness="2" X1="500" Margin="0 10 0 0" Stroke="Black" ></Line>
             <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16" Margin="0 10 0 0">Nom de la sauvegarde</TextBlock>
             <TextBox x:Name="sourceTextBox" Text="{Binding SaveModel.pathSource, Mode=TwoWay}" FontSize="16" Background="#eeeeee"/>
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16" Margin="0 10 0 0">Nom de la sauvegarde</TextBlock>
+                    <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16" Margin="0 10 0 0">Répertoire source</TextBlock>
                     <TextBox FontSize="16" Background="#eeeeee" Width="240"/>
                 </StackPanel>
                 <StackPanel>
@@ -52,7 +49,7 @@
                 
             </StackPanel>
             <TextBlock FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16" Width="500" TextAlignment="Center" Margin="0 10 0 0">Type de sauvegarde</TextBlock>
-            <ComboBox Margin="0 10 0 0" FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16">
+            <ComboBox Margin="0 0 0 0" FontFamily="Montserrat" FontWeight="DemiBold" FontSize="16">
                 <ComboBoxItem>Complète</ComboBoxItem>
                 <ComboBoxItem>Différentielle</ComboBoxItem>
             </ComboBox>
